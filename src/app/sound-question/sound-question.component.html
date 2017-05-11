@@ -1,0 +1,14 @@
+<div class="wrapper" [ngClass]="{'hide': (!showQuestion)}">
+	<div class="counter">
+		<span class="counter-text">
+			<span *ngIf="counter > 0">{{counter}}</span>
+			<span *ngIf="counter == 0" class="fa fa-headphones"></span>
+		</span>
+	</div>
+	<div class="question">
+		<span class="title-text"> {{title}} </span>
+	</div>
+	<div class="answers">
+		<div *ngFor="let answer of answers" class="button" [ngClass]="{'hide': (!showAnswers)}" (click)="answerQuestion(answer)">{{ answer }}</div>
+	</div>
+</div>

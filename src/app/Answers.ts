@@ -1,0 +1,1 @@
+export const Answers: string[] = ["Cynizm", "Ofiara", "Lustro", "Pokora", "Spokój", "Stanie"];

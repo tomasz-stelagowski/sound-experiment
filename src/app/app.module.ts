@@ -4,17 +4,26 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { SoundQuestion } from './sound-question/sound-question.component';
+import { SoundService } from './sound.service';
+import { InputComponent } from './input/input.component';
+import { InstructionsComponent } from './instructions/instructions.component';
+import { ThanksComponent } from './thanks/thanks.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SoundQuestion,
+    InputComponent,
+    InstructionsComponent,
+    ThanksComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [SoundService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

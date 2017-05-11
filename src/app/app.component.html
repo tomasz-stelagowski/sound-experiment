@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<div class="body">
+	<div class="main-wrapper">
+		<app-instructions *ngIf="controller == 0" (next)="progressTimeline($event)" [instructions]="instructions"></app-instructions>
+		<sound-question [ngClass]="{'hide': (controller != 1)}" [question]="currentQuestion.asObservable()" (answer)="questionAnswered($event)">loading sound-question</sound-question>
+		<app-thanks *ngIf="controller == 2"></app-thanks>
+	</div>
+</div>

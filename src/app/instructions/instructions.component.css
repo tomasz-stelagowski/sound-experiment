@@ -1,0 +1,21 @@
+.instruction-wrapper{
+	height: 80%;
+	padding-top: -webkit-calc((80% - 20px) / 2);
+	text-align: center;
+}
+
+.instruction-wrapper > span{
+	font-size: 20px;
+	color: darkgrey;
+}
+
+.button-wrapper{
+	height: 20%;
+	position: relative;
+	padding-top: -webkit-calc((20% - 50px) / 2);
+}
+
+.button-wrapper > .button{
+	margin: auto;
+	height: 50px;
+}
