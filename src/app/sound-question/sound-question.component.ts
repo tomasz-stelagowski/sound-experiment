@@ -29,6 +29,7 @@ export class SoundQuestion {
   countToPlay(count){
      if(this.counter == 0) {
        clearInterval(count);
+       console.log(this.audio.src);
        this.audio.play();
      } 
      else this.counter--;
@@ -60,8 +61,8 @@ export class SoundQuestion {
     }, 500);
   }
 
-  answerQuestion(answer){
-    let question = this.question.copy({answer: answer});
+  answerQuestion(answer: string){
+    let question = this.question.copy({answer: answer.toLowerCase() });
     this._answer.next(question);
   }
 

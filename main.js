@@ -6,7 +6,7 @@ let win = null;
 app.on('ready', () => {
 
   // Initialize the window to our specified dimensions
-  win = new BrowserWindow({width: 1000, height: 600, frame: false, fullscreen: true});
+  win = new BrowserWindow({width: 800, height: 600, frame: false, fullscreen: true});
 
   //add shortcut to close
   globalShortcut.register('CmdOrCtrl+Q', () => app.quit() );
@@ -17,7 +17,7 @@ app.on('ready', () => {
   
   // Show dev tools
   // Remove this line before distributing
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
   // Remove window once app is closed
   win.on('closed', function () {

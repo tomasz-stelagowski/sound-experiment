@@ -1,14 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Question } from './question';
 import { Algs } from './algs';
 import { Data } from './sound';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+//var fs = window['require']('fs');
 
 
 @Injectable()
 export class SoundService {
 
+    constructor(private http: Http){};
+
+    private url: string = '/api/results';
 
     getQuestions(): Question[] {
         var listOfSounds: Question[] = [];
@@ -18,11 +23,14 @@ export class SoundService {
             Data[key].forEach( (sound) => listOfSounds.push(Question.fromJson(sound, defaults)) );
         }
 
-        return Algs.shuffle(listOfSounds).slice(0, 2);
+        return Algs.shuffle(listOfSounds).slice(0, 3);
     }
 
-    saveAnswers(): void {
+    saveAnswers(questions: Question[]): void {
+        let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        let options = new RequestOptions({ headers: headers }); // Create a request option
 
+        this.http.post(this.url, questions, options).subscribe(()=>{});
     }
 }
 

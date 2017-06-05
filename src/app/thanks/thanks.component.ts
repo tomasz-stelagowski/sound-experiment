@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-thanks',
@@ -9,7 +9,14 @@ export class ThanksComponent implements OnInit {
 
   constructor() { }
 
+  @Input() resultsSaved;
+  @Output() saveResults: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   ngOnInit() {
+    this.emmitSave();
+  }
+  emmitSave(){
+  	this.saveResults.next(true);
   }
 
 }

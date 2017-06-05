@@ -29,4 +29,8 @@ export class Question {
 
 		return question;
 	}
+
+	toJsonString(): string{
+		return JSON.stringify(this);
+	}
 }

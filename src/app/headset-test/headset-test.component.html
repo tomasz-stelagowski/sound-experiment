@@ -1,0 +1,18 @@
+<app-instructions *ngIf="controller == 1" (next)="afterInstructions()" [instructions]="instructions"></app-instructions>
+<app-instructions *ngIf="controller == 2" [button]="'false'" [instructions]="'Dobrze'"></app-instructions>
+<app-instructions *ngIf="controller == 3" (next)="noSoundReact()" [button]="true" [instructions]="noSoundMsg"></app-instructions>
+<div class="wrapper" *ngIf="controller == 0">
+	<div class="counter">
+		<span class="counter-text">
+			<span class="fa fa-headphones"></span>
+		</span>
+	</div>
+	<div class="question">
+		<span class="title-text"> {{title}} </span>
+	</div>
+	<div class="answers">
+		<div class="button" (click)="answerQuestion('left')"> Lewe </div>
+		<div class="button" (click)="answerQuestion('right')"> Prawe </div>
+		<div class="button" (click)="noSound()"> Nic nie slyszę </div>
+	</div>
+</div>

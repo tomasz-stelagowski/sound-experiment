@@ -1,0 +1,100 @@
+.questionaire-wrapper{
+	width: 1000px;
+	height: 100%;
+	margin-left: -webkit-calc(50% - 500px);
+
+}
+.questionaire-body{
+	width: 100%;
+	height: 80%;
+
+
+	text-align: center;
+}
+.questionaire-button{
+	padding-top: 20px;
+	height: 20%;
+	text-align: center;
+}
+
+.questionaire-button > span{
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+
+.counter-text{
+	font-size: 150px;
+	color: darkgrey;
+}
+.title-text{
+	font-size: 20px;
+	color: darkgrey;
+}
+
+p {
+	font-size: 20px;
+	color: darkgrey;
+}
+
+.questionaire-textarea-wrapper{
+	height: 100%;
+}
+
+.questionaire-words{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: space-around;
+}
+
+.word{
+	font-size: 20px;
+
+	height: 24px;
+	width: 25%;
+
+	padding: 2px 2px;
+	padding-left: 40px;
+	box-sizing: border-box;
+	color: darkgrey;
+
+	//border: 1px darkgrey solid;
+
+	text-align: left;
+}
+
+.empty{
+	content: "";
+	cursor: inherit;
+}
+
+.point{
+	cursor: pointer;
+}
+
+.questionaire-opis{
+	width: 100%;
+	height: -webkit-calc(50%);
+}
+
+.questionaire-textarea{
+	width: 50%;
+	height: 50%;
+	margin: auto;
+}
+
+.questionaire-textarea > div{
+	width: 100%;
+	height: 20px;
+	
+	text-align: left; 
+}
+
+.questionaire-textarea > textarea{
+	resize: none;
+	outline: none;
+	width: 100%;
+	height: -webkit-calc((90% - 20px));
+}

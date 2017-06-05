@@ -1,7 +1,9 @@
 <div class="body">
 	<div class="main-wrapper">
+		<app-headset-test *ngIf="controller == 4" (brokenHeadset)="exitExperiment()" (next)="progressTimeline($event)"></app-headset-test>
 		<app-instructions *ngIf="controller == 0" (next)="progressTimeline($event)" [instructions]="instructions"></app-instructions>
 		<sound-question [ngClass]="{'hide': (controller != 1)}" [question]="currentQuestion.asObservable()" (answer)="questionAnswered($event)">loading sound-question</sound-question>
-		<app-thanks *ngIf="controller == 2"></app-thanks>
+		<app-thanks *ngIf="controller == 2" [resultsSaved]="resultsSaved" (saveResults)="saveResults()"></app-thanks>
+		<app-questionnaire *ngIf="controller == 3" (next)="progressTimeline($event)"> </app-questionnaire>
 	</div>
 </div>

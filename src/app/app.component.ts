@@ -17,9 +17,11 @@ export class AppComponent {
 	0 - instructions
 	1 - questions
 	2 - thanks
+  3 - questionaire
   */
   controller: number = 0;
   time: number = 1;
+  resultsSaved: boolean = false;
 
   instructions: string;
 
@@ -52,24 +54,37 @@ export class AppComponent {
   			// code...
   			break;
   		case 1:
+        this.controller = 0;
+        this.instructions = `Witamy. Jeżeli zgadzasz się wziąc udział w naszym badaniu kliknij dalej.`;
+        break;
+      case 2:
+        this.controller = 0;
+        this.instructions = `Najpierw podłącz słuchawki a następnie przetestujemy ich dźwięk`;
+        break;
+      case 3:
+        this.controller = 4;
+        break;
+      case 4:
   			this.controller = 0;
-  			this.instructions = `Za chwilę usłyszysz serię dźwięków. Prosimy abyś po każdym dźwięku wybrał ten który usłyszałeś.`;
+  			this.instructions = `Teraz usłyszysz serię dźwięków. Prosimy abyś po każdym dźwięku wybrał ten który usłyszałeś.`;
   			break;
-  		case 2:
+  		case 5:
   			this.controller = 1;
   			this.currentQuestion.next(ExampleQuestion);
   			break;
-  		case 3:
+  		case 6:
   			this.controller = 0;
   			this.instructions = `Dźwięk który właśnie usłyszałeś był testowy. Jeżeli jesteś gotów kliknij "Dalej" aby przejść do właściwego badania.`;
   			break;
-  		case 4:
+  		case 7:
   			this.controller = 1;
   			this.nextQuestion();
   			break;
-  		case 5:
-  			//nie ma
-  			this.progressTimeline();
+      case 8:
+        this.controller = 0;
+        this.instructions = `Teraz prosimy abyś wypełnił kwestionariusz.`;
+  		case 9:
+        this.controller = 3
   			break;
   		default:
   			this.controller = 2;
@@ -78,7 +93,7 @@ export class AppComponent {
   }
 
   questionAnswered(question: Question){
-  	if(this.time == 2){
+  	if(this.time == 5){
   		this.progressTimeline();
   	} else {
   		this.answeredQuestions.push(question);
@@ -87,12 +102,19 @@ export class AppComponent {
 	  		//zapisz wyniki	
   			this.progressTimeline();
 	  	} else {
-			this.nextQuestion();
-		}
-
+			  this.nextQuestion();
+		  }
   	}
- 
+  }
 
+  exitExperiment(){
+    this.time = 100;
+    this.timeline();
+  }
+
+  saveResults(){
+     this.soundService.saveAnswers(this.answeredQuestions);
+     //this.resultsSaved = true;
   }
 }
 

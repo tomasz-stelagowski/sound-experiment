@@ -1,0 +1,82 @@
+<div class="questionaire-wrapper">
+	<div class="questionaire-body">
+		<div *ngIf="controller==0" polecenie1>
+			<p>Niniejszy kwestionariusz zawiera listę rzeczowników – nazw cech mogących służyć  do charakteryzowania ludzi.</p>
+			<p>Prosimy o przeczytanie całej listy oraz zaznaczenie na niej tych cech, których używa Pan(i) myśląc o innych ludziach. Prosimy o postawienie krzyżyka "<span class="fa fa-times"></span>" obok każdej cechy, która się Panu(i) nasunie.</p>
+			<p>Następnie prosimy o ponowne przeczytanie listy i wybranie z cech zaznaczonych przez Pana(nią) krzyżykami  dziesięciu cech, których używa Pan(i) najczęściej myśląc o innych ludziach</p>
+			<p>Prosimy o otoczenie kółkami krzyżyków - <span class="fa fa-times-circle-o"></span> odnoszących się do tych 10 wybranych cech </p>
+			<p>Kliknij pozycję aby zaznaczy ją <span class="fa fa-time"></span>, a następnie kliknij ponownie aby otoczyć - <span class="fa fa-times-circle-o"></span> - kółkiem</p>
+		</div>
+		<div *ngIf="controller==1" wykrelsanki1>
+			<div class="questionaire-title"></div>
+			<div class="questionaire-words title-text">
+				<div *ngFor="let word of firstQuestionaire; let i=index" class="word" >
+					<span class="point">
+						<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[word.symbol] }}"></span>
+						<span (click)="toggleWord(1, i)">{{word.name}}</span>
+					</span>
+				</div>
+				<div class="word empty"></div>
+				<div class="word empty"></div>	
+			</div>
+		</div>
+		<div *ngIf="controller==2" class="questionaire-textarea-wrapper" pole tekstowe>
+			<div class="questionaire-title"></div>
+			<div class="questionaire-opis">
+				<p>Prosimy teraz pomyśleć o innych ludziach i zastanowić się, jacy ludzie są Panu(i) bliscy?</p>
+				<p>O jakich ludziach przede wszystkim  Pan(i)  MY, zaliczając się do ich grona?</p>
+				<p>Określenia MY używamy często w odniesieniu do różnych grup i kategorii ludzi. Prosimy, aby zastanowił (a) się Pan(i) nad tym, o jakiej grupie lub kategorii myśli Pan(i) przede wszystkim, używając określenia MY?</p>
+				<p>Prosimy, aby postarał (a) się Pan (i) w dowolnej formie dokończyć poniższe  zdanie pierwszymi skojarzeniami, jakie przyjdą Panu (i) na myśl:</p>
+			</div>
+			<div class="questionaire-textarea">
+				<div class="title-text">MY  to</div>
+				<textarea></textarea>
+			</div>
+
+		</div>
+		<div *ngIf="controller==3" polecenie2>
+			<p> Prosimy teraz pomyśleć o ludziach, w stosunku do których używa Pan(i) określenia MY.</p>
+			<p>Korzystając z listy na następnej stronie prosimy o zaznaczenie krzyżykami tych spośród cech, które nasuwają się Panu (i) często, gdy próbuje Pan (i) opisać i charakteryzować Was.</p>
+			<p>Następnie prosimy, aby jeszcze raz przeczytał (a) Pan (i) cechy oznaczone krzyżykami i wybrał (a) spośród nich 10 najczęściej używanych.</p>
+			<p>Prosimy o otoczenie kółkami krzyżyków –  <span class="fa fa-times-circle-o"></span>  – odnoszących się do tych 10 ostatecznie wybranych cech.</p>
+			<p>Kliknij pozycję aby zaznaczy ją <span class="fa fa-time"></span>, a następnie kliknij ponownie aby otoczyć - <span class="fa fa-times-circle-o"></span> - kółkiem</p>
+
+		</div>
+		<div *ngIf="controller==4" wykreslanki2>
+			<div class="questionaire-title"></div>
+			<div class="questionaire-words title-text">
+				<div *ngFor="let word of secondQuestionaire; let i=index" class="word" >
+					<span class="point">
+						<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[word.symbol] }}"></span>
+						<span (click)="toggleWord(2, i)">{{word.name}}</span>
+					</span>
+				</div>
+				<div class="word empty"></div>
+				<div class="word empty"></div>	
+			</div>
+		</div>
+		<div *ngIf="controller==5" polecenie2>
+			<p>Zachęcamy teraz Pana (nią) do skupienia uwagi na sobie samym (ej).</p>
+			<p>Korzystając z listy na następnej stronie prosimy o zaznaczenie krzyżykami tych spośród cech, które nasuwają się Panu (i) często, gdy próbuje Pan (i) opisać i charakteryzować samego siebie.</p>
+			<p>Następnie prosimy, aby jeszcze raz przeczytał (a) Pan (i)  cechy oznaczone krzyżykami i wybrał (a) spośród nich 10 najczęściej używanych do samoopisu rzeczowników.</p>
+			<p>Prosimy o otoczenie kółkiem krzyżyków – <span class="fa fa-times-circle-o"></span> - odnoszących się do tych 10 ostatecznie wybranych cech.</p>
+			<p>Kliknij pozycję aby zaznaczy ją <span class="fa fa-time"></span>, a następnie kliknij ponownie aby otoczyć - <span class="fa fa-times-circle-o"></span> - kółkiem</p>
+		</div>
+		<div *ngIf="controller==6" wykreslanki2>
+			<div class="questionaire-title"></div>
+			<div class="questionaire-words title-text">
+				<div *ngFor="let word of thirdQuestionaire; let i=index" class="word" >
+					<span class="point">
+						<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[word.symbol] }}"></span>
+						<span (click)="toggleWord(3, i)">{{word.name}}</span>
+					</span>
+				</div>
+				<div class="word empty"></div>
+				<div class="word empty"></div>	
+			</div>
+		</div>
+	</div>
+	<div class="questionaire-button">
+		<span class="button" (click)="nextPage()" >Next</span>
+	</div>
+</div>
