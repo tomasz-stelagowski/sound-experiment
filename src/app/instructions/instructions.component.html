@@ -1,5 +1,7 @@
 <div class="instruction-wrapper">
-	<span> {{instruction}} </span>
+	<p *ngFor="let point of instruction">
+		<span> {{point}} </span>
+	</p>
 </div>
 <div *ngIf="button == true" class="button-wrapper">
 	<div class="button" (click)="next()">Dalej</div>

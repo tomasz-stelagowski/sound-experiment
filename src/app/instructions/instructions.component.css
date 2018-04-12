@@ -1,10 +1,10 @@
 .instruction-wrapper{
 	height: 80%;
-	padding-top: -webkit-calc((80% - 20px) / 2);
+	padding-top: 20px;
 	text-align: center;
 }
 
-.instruction-wrapper > span{
+.instruction-wrapper span{
 	font-size: 20px;
 	color: darkgrey;
 }

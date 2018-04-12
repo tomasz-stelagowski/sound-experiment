@@ -10,7 +10,10 @@ import { InputComponent } from './input/input.component';
 import { InstructionsComponent } from './instructions/instructions.component';
 import { ThanksComponent } from './thanks/thanks.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
-import { HeadsetTestComponent } from './headset-test/headset-test.component'
+import { HeadsetTestComponent } from './headset-test/headset-test.component';
+import { MetricsComponent } from './metrics/metrics.component';
+import { Select } from './select/select.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { HeadsetTestComponent } from './headset-test/headset-test.component'
     InstructionsComponent,
     ThanksComponent,
     QuestionnaireComponent,
-    HeadsetTestComponent
+    HeadsetTestComponent,
+    MetricsComponent
   ],
   imports: [
     BrowserModule,

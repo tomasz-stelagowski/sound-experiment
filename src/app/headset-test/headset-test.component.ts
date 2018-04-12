@@ -12,9 +12,9 @@ export class HeadsetTestComponent implements OnInit {
   constructor() { }
 
   controller = 0;
-  instructions = `Prawdopodobnie masz założone słuchawki na odwrót. Załóż je tak aby każda ze słuchawek przylegała teraz do innego ucha.`;
+  instructions = [`Prawdopodobnie masz założone słuchawki na odwrót. Załóż je tak aby każda ze słuchawek przylegała teraz do innego ucha.`];
   title = "Wybierz w którym uchu usłyszałeś dźwięk";
-  noSoundMsg = "Wygląda na to że twoje słuchawki nie działają poprawnie. Niestety udział w badaniu jest niemożliwy :("  
+  noSoundMsg = ["Wygląda na to że twoje słuchawki nie działają poprawnie. Niestety udział w badaniu jest niemożliwy :("];
   ear: string;
 
   audioLeft;

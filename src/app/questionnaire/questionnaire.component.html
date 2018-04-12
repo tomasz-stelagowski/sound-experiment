@@ -8,12 +8,17 @@
 			<p>Kliknij pozycję aby zaznaczy ją <span class="fa fa-time"></span>, a następnie kliknij ponownie aby otoczyć - <span class="fa fa-times-circle-o"></span> - kółkiem</p>
 		</div>
 		<div *ngIf="controller==1" wykrelsanki1>
+			<div class="helper">
+				<span class="fa fa-times"></span><span>{{ this.firstHelper.x }}</span>
+				<br />
+				<span class="fa fa-times-circle-o"></span><span [ngClass]="{'notok': (this.firstHelper.o != 10)}">{{ this.firstHelper.o }} / 10</span>
+			</div>
 			<div class="questionaire-title"></div>
 			<div class="questionaire-words title-text">
 				<div *ngFor="let word of firstQuestionaire; let i=index" class="word" >
-					<span class="point">
+					<span class="point" (click)="toggleWord(1, i)">
 						<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[word.symbol] }}"></span>
-						<span (click)="toggleWord(1, i)">{{word.name}}</span>
+						<span>{{word.name}}</span>
 					</span>
 				</div>
 				<div class="word empty"></div>
@@ -30,7 +35,7 @@
 			</div>
 			<div class="questionaire-textarea">
 				<div class="title-text">MY  to</div>
-				<textarea></textarea>
+				<textarea [(ngModel)]="textarea"></textarea>
 			</div>
 
 		</div>
@@ -43,12 +48,17 @@
 
 		</div>
 		<div *ngIf="controller==4" wykreslanki2>
+			<div class="helper">
+				<span class="fa fa-times"></span><span>{{ this.secondHelper.x }}</span>
+				<br />
+				<span class="fa fa-times-circle-o"></span><span [ngClass]="{'notok': (this.secondHelper.o != 10)}">{{ this.secondHelper.o }} / 10</span>
+			</div>
 			<div class="questionaire-title"></div>
 			<div class="questionaire-words title-text">
 				<div *ngFor="let word of secondQuestionaire; let i=index" class="word" >
-					<span class="point">
+					<span class="point"  (click)="toggleWord(2, i)">
 						<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[word.symbol] }}"></span>
-						<span (click)="toggleWord(2, i)">{{word.name}}</span>
+						<span>{{word.name}}</span>
 					</span>
 				</div>
 				<div class="word empty"></div>
@@ -63,12 +73,17 @@
 			<p>Kliknij pozycję aby zaznaczy ją <span class="fa fa-time"></span>, a następnie kliknij ponownie aby otoczyć - <span class="fa fa-times-circle-o"></span> - kółkiem</p>
 		</div>
 		<div *ngIf="controller==6" wykreslanki2>
+			<div class="helper">
+				<span class="fa fa-times"></span><span>{{ this.thirdHelper.x }}</span>
+				<br />
+				<span class="fa fa-times-circle-o"></span><span [ngClass]="{'notok': (this.thirdHelper.o != 10)}">{{ this.thirdHelper.o }} / 10</span>
+			</div>
 			<div class="questionaire-title"></div>
 			<div class="questionaire-words title-text">
 				<div *ngFor="let word of thirdQuestionaire; let i=index" class="word" >
-					<span class="point">
+					<span class="point"  (click)="toggleWord(3, i)">
 						<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[word.symbol] }}"></span>
-						<span (click)="toggleWord(3, i)">{{word.name}}</span>
+						<span>{{word.name}}</span>
 					</span>
 				</div>
 				<div class="word empty"></div>

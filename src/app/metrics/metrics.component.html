@@ -1,0 +1,72 @@
+<div class="metrics-wrapper">
+	<div class="page" *ngIf="page==1">
+		<div class="sex">
+			<span class="word">Płeć: </span>
+			<span *ngFor="let sx of sex; let i=index" class="option">
+				<span class="point word" (click)="select('sex', i)">
+					<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[sx.symbol] }}"></span>
+					<span>{{sx.name}}</span>
+				</span>
+			</span>
+		</div>
+		<div class="age">
+			<span class="word">Wiek:</span>
+			<div class="my-select">
+				<input type="checkbox" class="checkbox-hack" id="checkbox">
+				<div class="select-label">
+					<label for="checkbox" class="point folded word"> {{ checkbox }} </label>
+					<label class="un-folded word"> {{ checkbox }} </label>
+				</div>
+				<div class="select-list">
+					<label *ngFor="let option of age" (click)="select('age', option)" for="checkbox" class="point select-option word"> {{ option }} </label>
+				</div>
+			</div>
+			
+		</div>
+		<div class="education">
+			<span class="word">Wykrztałcenie: </span>
+			<br />
+			<span *ngFor="let sx of education; let i=index" class="option_vertical">
+				<span class="point word" (click)="select('education', i)">
+					<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[sx.symbol] }}"></span>
+					<span>{{sx.name}}</span>
+				</span>
+			</span>
+		</div>
+		<div class="livingplace">
+			<span class="word">Miejsce zamieszkania: </span>
+			<br />
+			<span *ngFor="let sx of livingplace; let i=index" class="option_vertical">
+				<span class="point word" (click)="select('livingplace', i)">
+					<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[sx.symbol] }}"></span>
+					<span>{{sx.name}}</span>
+				</span>
+			</span>
+		</div>
+		<div class="questionaire-button">
+			<span class="button" (click)="nextPage()">Dalej</span>
+		</div>
+	</div>
+
+	<div class="page" *ngIf="page==2">
+		<div class="page2-wrapper">
+			<div class="image">
+				<span class="icon fa fa-volume-up"></span>
+			</div>
+			<div class="text word">
+				<div class="question">Wyobraź sobie, że zaraz usłyszysz bardzo cichy dźwięk i musisz się nachylić do ekranu. Które ucho znajduje się bliżej ekranu (którym będziesz słuchał)?</div>
+				<div class="answer">
+					<span *ngFor="let sx of ears; let i=index" class="option">
+						<span class="point word" (click)="select('ears', i)">
+							<span class="fa fa-{{ ({'0': 'square-o', '1': 'times', '2': 'times-circle-o'})[sx.symbol] }}"></span>
+							<span>{{sx.name}}</span>
+						</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="questionaire-button">
+			<span class="button" (click)="nextPage()">Dalej</span>
+		</div>
+	</div>
+</div>

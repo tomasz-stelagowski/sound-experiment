@@ -1,0 +1,10 @@
+<div class="qd_select-wrapper">
+	<input type="checkbox" class="qd_checkbox-hack" id="{{selectId}}">
+	<div class="qd_select-label tx-dark">
+		<label for="{{selectId}}" class="qd_folded tx tx-dark clickable"> {{ selected }} </label>
+		<label class="qd_un-folded tx tx-dark"> {{ selected }} </label>
+	</div>
+	<div class="qd_select-list {{ float ? 'float' : '' }}">
+		<label *ngFor="let option of optionList" (click)="selectOption(option)" for="{{selectId}}" class="qd_select-option tx tx-dark clickable"> {{ option.message }} </label>
+	</div>
+</div>
