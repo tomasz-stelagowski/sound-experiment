@@ -14,6 +14,7 @@ import { Answers } from '../Answers';
 export class SoundQuestion {
 
   @Input('question') _question: Observable<Question> = new Observable<Question>();
+  @Input() questioncount: Object;
   @Output('answer') _answer: EventEmitter<Question> = new EventEmitter<Question>();
 
   answers: string[] = Answers;

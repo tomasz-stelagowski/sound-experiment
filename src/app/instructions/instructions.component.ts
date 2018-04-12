@@ -7,7 +7,7 @@ import { Input, Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class InstructionsComponent implements OnInit {
   
-  @Input('instructions') instruction: string;
+  @Input('instructions') instruction;
   @Input('button') button: boolean = true;
   @Output('next') _next = new EventEmitter<boolean>();
 

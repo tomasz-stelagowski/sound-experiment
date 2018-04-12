@@ -42,3 +42,22 @@
 	color: darkgrey;
 }
 
+.helper{
+	position: fixed;
+	top: 50px;
+	left: 50px;
+	height: 200px;
+	width: 150px;
+	display: block;
+}
+.helper.visible{
+	display: block;
+}
+.helper span{
+	font-size: 20px;
+	color: darkgrey;
+	padding: 5px 10px;
+}
+.notok{
+	color: red!important;
+}

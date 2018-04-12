@@ -13,7 +13,7 @@ export class SoundService {
 
     constructor(private http: Http){};
 
-    private url: string = '/api/results';
+    private url: string = 'http://students.mimuw.edu.pl/\~ts340234/server/server.php';
 
     getQuestions(): Question[] {
         var listOfSounds: Question[] = [];
@@ -23,14 +23,15 @@ export class SoundService {
             Data[key].forEach( (sound) => listOfSounds.push(Question.fromJson(sound, defaults)) );
         }
 
-        return Algs.shuffle(listOfSounds).slice(0, 3);
+        return Algs.shuffle(listOfSounds);//.slice(0, 1);
     }
 
-    saveAnswers(questions: Question[]): void {
+    saveAnswers(questions: any): void {
         let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         let options = new RequestOptions({ headers: headers }); // Create a request option
 
-        this.http.post(this.url, questions, options).subscribe(()=>{});
+        console.log(this.url);
+        this.http.post(this.url, questions, options).subscribe( res =>{ console.log(res); });
     }
 }
 

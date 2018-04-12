@@ -1,5 +1,5 @@
 <app-instructions *ngIf="controller == 1" (next)="afterInstructions()" [instructions]="instructions"></app-instructions>
-<app-instructions *ngIf="controller == 2" [button]="'false'" [instructions]="'Dobrze'"></app-instructions>
+<app-instructions *ngIf="controller == 2" [button]="'false'" [instructions]="['Dobrze']"></app-instructions>
 <app-instructions *ngIf="controller == 3" (next)="noSoundReact()" [button]="true" [instructions]="noSoundMsg"></app-instructions>
 <div class="wrapper" *ngIf="controller == 0">
 	<div class="counter">
